@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Load modules....
+#
+
+case "$1" in
+  start)
+	modprobe brcmfmac
+        modprobe hid-multitouch
+	sleep 2
+        ;;
+  stop)
+	modprobe -r brcmfmac
+        modprobe -r hid-multitouch
+        ;;
+  restart|reload)
+	stop
+	start
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?

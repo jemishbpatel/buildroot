@@ -2130,4 +2130,8 @@ menu "Text editors and viewers"
 	source "package/vim/Config.in"
 endmenu
 
+menu "EMT specific"
+	source "package/emtguiapp/Config.in"
+endmenu
+
 endmenu

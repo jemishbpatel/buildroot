@@ -147,6 +147,14 @@ endef
 define BUSYBOX_INSTALL_MDEV_CONF
 	$(INSTALL) -D -m 0644 package/busybox/mdev.conf \
 		$(TARGET_DIR)/etc/mdev.conf
+	$(INSTALL) -D -m 0755 package/busybox/automounter.sh \
+		$(TARGET_DIR)/bin/
+	$(INSTALL) -D -m 0755 package/busybox/S99emtguiapp \
+		$(TARGET_DIR)/etc/init.d/S99emtguiapp
+	$(INSTALL) -D -m 0755 package/busybox/S60modules \
+		$(TARGET_DIR)/etc/init.d/S60modules
+	$(INSTALL) -D -m 0755 package/busybox/S98wifi \
+		$(TARGET_DIR)/etc/init.d/S98wifi
 endef
 define BUSYBOX_SET_MDEV
 	$(call KCONFIG_ENABLE_OPT,CONFIG_MDEV,$(BUSYBOX_BUILD_CONFIG))

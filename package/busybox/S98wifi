@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Start WIFI Access Point....
+#
+
+case "$1" in
+  start)
+	echo "Starting wifi Accesspoint..."
+	hostapd /etc/hostapd.conf &
+	dnsmasq
+        ;;
+  stop)
+	killall hostapd
+	killall dnsmask
+        ;;
+  restart|reload)
+	stop
+	start
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?

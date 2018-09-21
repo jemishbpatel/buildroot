@@ -38,6 +38,7 @@ endif
 ifeq ($(BR2_PACKAGE_LINUX_PAM),y)
 define OPENSSH_INSTALL_PAM_CONF
 	$(INSTALL) -D -m 644 $(@D)/contrib/sshd.pam.generic $(TARGET_DIR)/etc/pam.d/sshd
+	$(INSTALL) -D -m 644 package/openssh/sshd_config $(TARGET_DIR)/etc/ssh/sshd_config
 	$(SED) '\%password   required     /lib/security/pam_cracklib.so%d' $(TARGET_DIR)/etc/pam.d/sshd
 	$(SED) 's/\#UsePAM no/UsePAM yes/' $(TARGET_DIR)/etc/ssh/sshd_config
 endef
@@ -67,6 +68,7 @@ endef
 define OPENSSH_INSTALL_INIT_SYSV
 	$(INSTALL) -D -m 755 package/openssh/S50sshd \
 		$(TARGET_DIR)/etc/init.d/S50sshd
+	$(INSTALL) -D -m 644 package/openssh/sshd_config $(TARGET_DIR)/etc/ssh/sshd_config
 endef
 
 define OPENSSH_INSTALL_SSH_COPY_ID
