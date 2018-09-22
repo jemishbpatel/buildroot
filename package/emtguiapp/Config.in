@@ -1,5 +1,5 @@
 config BR2_PACKAGE_EMT_APP
 	bool "EMT Application"
-	depends on BR2_PACKAGE_QT5BASE_GUI
+	depends on BR2_PACKAGE_QT_GUI_MODULE
 	help
 	 EMT GUI Application

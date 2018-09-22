@@ -1,4 +1,4 @@
-#include <QtWidgets>
+#include <QtGui>
 #include "window.h"
 #include <unistd.h>
 #include <QFile>
