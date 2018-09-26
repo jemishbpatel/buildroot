@@ -74,6 +74,7 @@ Window::Window(QWidget *parent)
         directoryComboBox->setCurrentIndex(directoryComboBox->findText(image));
 
 	offset = 0;
+	appParam.dataProcessed = false;
 	process();
 	file.close();
     }
