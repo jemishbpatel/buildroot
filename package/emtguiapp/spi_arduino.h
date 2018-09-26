@@ -9,6 +9,7 @@ typedef struct _spi_arduino_config {
 	unsigned int number_of_slaves;
 	unsigned int cards_per_slave;
 	unsigned int total_data_length;
+	bool	is_last_equipment_first;
 } spi_arduino_config;
 
 typedef enum _piboard_gpio_dir {

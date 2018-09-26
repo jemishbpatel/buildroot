@@ -608,6 +608,7 @@ int configureData(applicationParameters *appParam)
 	config.data_length  = appParam->totalNoEquipments;
 	config.cards_per_slave  = MAXIMUM_EQUIPMENTS_ON_CARDS;
 	config.total_data_length = appParam->totalBytes;
+	config.is_last_equipment_first = false;
 	appParam->dataOffset = 0;
 
 	retVal = ioctl(appParam->iDeviceHandle, ARDUINO_CONFIGURE_DATA, &config);
